@@ -1,0 +1,59 @@
+#top{
+    position: static;
+}
+
+#navigation {
+    position: static;
+    width: 100%;
+}
+
+.main {
+    position: static;
+    width: 100%;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.body1 {
+    position: static;
+    width: 74%;
+    float: left;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.image1 {
+    position: static;
+    width: 29%;
+    float: left;
+    border-style: solid;
+    border-width: 3px;
+    display: inline;
+}
+
+.form1 {
+    position: static;
+    float: right;
+    width: 70%;
+    border-style: solid;
+    border-width: 3px;
+    display: inline;
+}
+
+.sidebar {
+    float: right;
+    width: 25%;
+    height: 100%;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.body2 {
+    position: static;
+    width: 100%;
+    display: inline;
+}
+
+#footer {
+    clear:both;
+}
