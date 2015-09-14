@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="layout.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <title>W4C1</title>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Javascript DOM experiments</h1>
+        </div>
+        <div>
+            <div onmouseover="mOver(this)" onmouseout="mOut(this)" class="mbutton">
+                Mouse Over Me
+            </div>
+            <script>
+                function mOver(obj) {
+                    obj.innerHTML = "Hello"
+                }
+                function mOut(obj) {
+                    obj.innerHTML = "Goodbye"
+                }
+            </script>
+        </div>
+        <div class="row" style="margin-top:20px">
+            <div class="col-md-3">
+                <div onmousedown="mDown(this)" onmouseup="mUp(this)" class="mbutton">
+                    Click on Me
+                </div>
+                <script>
+                    function mDown(obj) {
+                        obj.style.backgroundColor = "#1ec5e5";
+                        obj.innerHTML = "Release Me";
+                        document.getElementById("click").innerHTML = "<h1>Peek a Boo!</h1>"
+                    }
+                    function mUp(obj) {
+                        obj.style.backgroundColor = "#D94A38";
+                        obj.innerHTML = "Click on Me Again";
+                        document.getElementById("click").innerHTML = "<h1></h1>"
+                    }
+                </script>
+            </div>
+            <div class="col-md-9">
+                <p id="click"></p>
+            </div>
+        </div>
+        <div class="row" style="margin-top:20px">
+            <div class="col-md-3">
+                <div onmousedown="mDown2(this)" onmouseup="mUp(this)" class="mbutton">
+                    Click and  Hold Me
+                </div>
+                <script>
+                    function mDown2(obj) {
+                        var color = obj.style.backgroundColor;
+                        obj.innerHTML = color;
+                    }
+                </script>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
