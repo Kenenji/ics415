@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>W4C2</title>
+    <script>
+        function display() {
+            function getQueryVariable(variable)
+            {
+                var query = window.location.search.substring(1);
+                var vars = query.split("&");
+                for (var i=0;i<vars.length;i++) {
+                    var pair = vars[i].split("=");
+                    if(pair[0] == variable){return pair[1];}
+                }
+                return(false);
+            }
+            var username = getQueryVariable("name");
+            var address = getQueryVariable("address");
+            var phone = getQueryVariable("phone");
+            message = "<ul><li><b>NAME: </b>" + username;
+            message += "<li><b>ADDRESS: </b>" + address;
+            message += "<li><b>PHONE: </b>" + phone + "</ul>";
+            document.getElementById("formData").innerHTML = message;
+            document.getElementById("name").innerHTML = username;
+            document.getElementById("address").innerHTML = address;
+            document.getElementById("number").innerHTML = phone;
+        }
+        window.onload = display;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <table class="table">
+            <tHead>
+                <tr>
+                    <th>Username</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                </tr>
+            </tHead>
+            <tbody>
+                <tr>
+                    <td><div id="name"></div></td>
+                    <td><div id="address"></div></td>
+                    <td><div id="number"></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="form">
+        <p id="formData">hi</p>
+    </div>
+</body>
+</html>
