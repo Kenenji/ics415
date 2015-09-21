@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <title></title>
+</head>
+<body>
+
+<p id="errors"></p>
+<form name="myForm" action="demo_form.html" onsubmit="return validateForm()" method="get">
+    <div class="form-group">
+        <label for="username">User name: </label>
+        <input type="text" name="name" id="username">
+    </div>
+    <div class="form-group">
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email">
+    </div>
+    <div class="form-group">
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password">
+    </div>
+    <div class="form-group">
+        <label for="confirm">Confirm Password: </label>
+        <input type="password" name="confirm" id="confirm">
+    </div>
+    <input type="button" value="Submit" onclick="validateForm();">
+
+</form>
+<script>
+    function validateForm() {
+        var username = document.getElementById("username").value;
+        var useremail = document.getElementById("email").value;
+        var userpassword = document.getElementById("password").value;
+        var userconfirm = document.getElementById("confirm").value;
+        var confirmpassword = true;
+        var message = "";
+
+        document.getElementById("username").style.backgroundColor = "white";
+        document.getElementById("email").style.backgroundColor = "white";
+        document.getElementById("password").style.backgroundColor = "white";
+        document.getElementById("confirm").style.backgroundColor = "white";
+
+        if(username.length == 0) {
+            document.getElementById("username").style.backgroundColor = "red";
+            message = message + "User name was left blank.<br>";
+        }
+        if(useremail.length == 0) {
+            document.getElementById("email").style.backgroundColor = "red";
+            message = message + "Email was left blank.<br>";
+        }
+        if(userpassword.length == 0) {
+            document.getElementById("password").style.backgroundColor = "red";
+            message = message + "Password was left blank.<br>";
+            confirmpassword = false;
+        }
+        if(userconfirm.length == 0) {
+            document.getElementById("confirm").style.backgroundColor = "red";
+            message = message + "Confirm Password was left blank.<br>";
+            confirmpassword = false;
+        }
+        if( confirmpassword && userpassword.localeCompare(userconfirm) != 0) {
+            document.getElementById("confirm").style.backgroundColor = "red";
+            document.getElementById("password").style.backgroundColor = "red";
+            message = message + "Passwords did not match.<br>"
+        }
+        document.getElementById("errors").innerHTML = message;
+    }
+</script>
+</body>
+</html>

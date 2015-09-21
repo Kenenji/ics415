@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Page</title>
+</head>
+<body>
+
+<h1>This is to just test random scripts.</h1>
+<div>
+    <p id="pineapple" class="1234">I am a fruit.</p>
+    <p id="demo"></p>
+    <script>
+        var x = document.getElementById("pineapple").className;
+        var y = x.length;
+        document.getElementById("demo").innerHTML = 'class = ' + x + '<br> y = ' + y;
+    </script>
+</div>
+<form name="myForm" action="demo_form.html" onsubmit="return validateForm()" method="get">
+    <div class="form-group">
+        <label for="username">User name: </label>
+        <input type="text" name="name" id="username" style="background-color:red">
+    </div>
+</form>
+
+</body>
+</html>
