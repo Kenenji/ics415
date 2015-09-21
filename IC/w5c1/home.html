@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+    <title>W5C1</title>
+</head>
+<body>
+
+<div class="container" style="width:100%;">
+    <div class="row">
+        <div class="col-sm-3" style="color:red; background-color:blue;">
+            <div id="box1">
+                <p>Click Test Box</p>
+            </div>
+        </div>
+        <div id="box2" class="col-sm-9">
+            <p>Have you clicked it?</p>
+        </div>
+        <script>
+            $("#box1").click(function() {
+                document.getElementById("box2").innerHTML = "You clicked on it!";
+            });
+        </script>
+    </div>
+    <div class="row">
+        <div class="col-sm-3" style="height:60px; margin-top:30px; box-sizing: border-box; border-style: solid;">
+            <div id="box3" align="center"><h3>Is there someone there?</h3></div>
+
+        </div>
+        <div id="box4" class="col-sm-9" style="height:60px; margin-top:30px">
+
+        </div>
+        <script>
+            $("#box3").mouseenter(function() {
+                document.getElementById("box4").innerHTML = "<h3>Hi there.</h3>";
+            });
+            $("#box3").mouseleave(function() {
+                document.getElementById("box4").innerHTML = "<h3>Bye.</h3>";
+            });
+        </script>
+    </div>
+    <div class="row">
+        <div class="col-sm-3" style="height:60px; margin-top:30px; box-sizing: border-box; border-style: solid;">
+            <div id="box5" align="center">
+                <h3>Was that a ghost?</h3>
+            </div>
+        </div>
+        <div id="box6" class="col-sm-9" style="height:60px; margin-top:30px">
+            <h3>Whooo I am a ghost!</h3>
+        </div>
+        <script>
+            $(function() {
+                $("#box6").fadeOut();
+            });
+            $("#box5").dblclick(function() {
+                $("#box6").fadeIn("slow");
+            });
+        </script>
+    </div>
+</div>
+
+</body>
+</html>
