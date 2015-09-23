@@ -21,9 +21,10 @@
                }})
             })
             $("#button2").click(function(){
-                $.ajax({url: "http://courses.ics.hawaii.edu/ics415f15/morea/040.javascript/ic-w5c2.html", success: function(result){
-                    $("#contentpage").html(result);
-                }})
+                $("#contentpage").load("http://courses.ics.hawaii.edu/ics415f15/morea/040.javascript/ic-w5c2.html");
+            })
+            $("#selfdestruct").click(function(){
+                $("div").fadeOut("slow");
             })
         });
     </script>
@@ -36,11 +37,12 @@
     </div><div id="contentload">
     </div>
     <button id="button1">Get External Content</button>
-    <div class="row" style="margin-top:30px;">
+    <div style="margin-top:30px;">
         <div id="contentpage">
-            <button id="button2">Load Page?</button>
+            <button id="button2">Load Page Assignment Page</button>
         </div>
     </div>
+    <button id="selfdestruct" style="margin-top:30px">Self Destruct</button>
 </div>
 
 </body>
