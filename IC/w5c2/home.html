@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+    <title>W5C2</title>
+
+    <script>
+        $(document).ready(function(){
+            $("#contentload").fadeOut();
+            $("#button1").click(function(){
+               $.ajax({url: "text.txt", success: function(result){
+                   $("#contentload").html(result);
+                   $("#contentload").fadeIn();
+                   $("#button1").fadeOut();
+               }})
+            })
+            $("#button2").click(function(){
+                $.ajax({url: "http://courses.ics.hawaii.edu/ics415f15/morea/040.javascript/ic-w5c2.html", success: function(result){
+                    $("#contentpage").html(result);
+                }})
+            })
+        });
+    </script>
+</head>
+<body>
+
+<div class="container" style="width:100%; margin:20px;">
+    <div class="page-header">
+        <h1>Jaron's W5C2</h1>
+    </div><div id="contentload">
+    </div>
+    <button id="button1">Get External Content</button>
+    <div class="row" style="margin-top:30px;">
+        <div id="contentpage">
+            <button id="button2">Load Page?</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
